@@ -1,0 +1,43 @@
+.header {
+  width: 100%;
+  height: 60px;
+  background-color: rgb(196, 215, 255);
+}
+
+.navItem {
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-decoration: none;
+  color: black;
+}
+
+.navItem:hover {
+  background-color: rgb(255, 124, 1);
+}
+
+.movieList {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-around;
+}
+/* =====================MOVIE DETAILS================= */
+.movieDetailsWrap {
+  display: flex;
+  gap: 30px;
+}
+
+.movieDetailsBtn {
+  font-size: 22px;
+  margin-top: 10px;
+  margin-left: 16px;
+}
+
+.movieDetailsImg {
+  width: 400px;
+  padding-left: 16px;
+  margin-top: 16px;
+}
