@@ -1,9 +1,13 @@
-import React from 'react';
 import { NavLink, Route, Routes } from 'react-router-dom';
-import { Home } from 'pages/Home';
-import { Movies } from 'pages/Movies';
-import { MovieDetails } from 'pages/MovieDetails';
-import css from '../pages/Style.module.css'
+import React, { lazy, Suspense } from 'react';
+// import { Home } from 'pages/Home';
+// import { Movies } from 'pages/Movies';
+// import { MovieDetails } from 'pages/MovieDetails';
+import Loader from './Loader/Loader';
+import css from '../pages/Style.module.css';
+const Home = lazy(() => import('pages/Home'));
+const Movies = lazy(() => import('pages/Movies'));
+const MovieDetails = lazy(() => import('pages/MovieDetails'));
 
 export const App = () => {
   return (
@@ -18,11 +22,13 @@ export const App = () => {
           </NavLink>
         </nav>
       </header>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/movies" element={<Movies />} />
-        <Route path="/movies/:movieId" element={<MovieDetails />} />
-      </Routes>
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/movies/:movieId/*" element={<MovieDetails />} />
+        </Routes>
+      </Suspense>
     </div>
   );
 };

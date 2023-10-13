@@ -1,9 +1,11 @@
 import { fetchRequestMovieDetails } from 'components/services/api';
 import React, { useEffect, useRef, useState } from 'react';
-import { Link, useLocation, useParams } from 'react-router-dom';
+import { Link, Route, Routes, useLocation, useParams } from 'react-router-dom';
 import css from './Style.module.css'
+import { Cast } from 'components/Cast/Cast';
+import { Reviews } from 'components/Reviews/Reviews';
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
     const { movieId } = useParams();
     const [movieData, setMovieData] = useState(null);
     const location = useLocation();
@@ -18,7 +20,6 @@ export const MovieDetails = () => {
             try {
                 const result = await fetchRequestMovieDetails(movieId);
                 setMovieData(result);
-                console.log(result);
             } catch (error) {
                 console.error(error);
             }
@@ -47,6 +48,17 @@ export const MovieDetails = () => {
                         <p>{genres}</p>
                     </div>
                 </div> : null}
-        </div>
+            <div>
+                <p>Additional information</p>
+                <Link to='cast'>Cast</Link>
+                <Link to='reviews'>Reviews</Link>
+            </div>
+            <Routes>
+                <Route path='cast' element={<Cast />} />
+                <Route path='reviews' element={<Reviews />} />
+            </Routes>
+        </div >
     );
 };
+
+export default MovieDetails;

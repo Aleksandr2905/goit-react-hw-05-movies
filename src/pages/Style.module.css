@@ -1,28 +1,49 @@
+/* =====================HEADER================= */
 .header {
   width: 100%;
-  height: 60px;
-  background-color: rgb(196, 215, 255);
+  background-color: rgb(156, 187, 255);
+  border-bottom: 2px solid rgb(48, 31, 92);
+  box-shadow: 1px 1px 1px 1px rgba(14, 0, 49, 0.5);
 }
 
 .navItem {
   display: inline-block;
-  padding: 10px;
-  margin: 10px;
-  border: 1px solid black;
-  border-radius: 5px;
+  font-size: 28px;
+  letter-spacing: 0.07em;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 30px;
+  cursor: pointer;
   text-decoration: none;
-  color: black;
+  color: rgb(14, 0, 49);
 }
 
 .navItem:hover {
-  background-color: rgb(255, 124, 1);
+  color: rgb(255, 124, 1);
 }
 
-.movieList {
+/* =====================MAIN================= */
+.titleTrending {
+  font-size: 40px;
+  font-weight: bold;
+  color: rgb(14, 0, 49);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.listTrending {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-around;
+}
+
+.imgTrending {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 /* =====================MOVIE DETAILS================= */
 .movieDetailsWrap {

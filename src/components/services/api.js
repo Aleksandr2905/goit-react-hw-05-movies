@@ -43,6 +43,5 @@ export const fetchRequestReviews = async movie_id => {
       page: 1,
     },
   });
-  console.log(data);
   return data;
 };

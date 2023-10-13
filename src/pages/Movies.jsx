@@ -3,7 +3,7 @@ import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import { fetchRequestSearch } from 'components/services/api';
 import css from './Style.module.css'
 
-export const Movies = () => {
+const Movies = () => {
   const [searchMovies, setSearchMovies] = useState([]);
   const [params, setSearchParams] = useSearchParams();
   const queryParam = params.get('query');
@@ -55,3 +55,5 @@ export const Movies = () => {
     </div>
   );
 };
+
+export default Movies;

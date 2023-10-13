@@ -3,8 +3,7 @@ import { fetchRequestTrending } from 'components/services/api';
 import { Link } from 'react-router-dom';
 import css from './Style.module.css'
 
-
-export const Home = () => {
+const Home = () => {
   const [trending, setTrending] = useState([]);
 
   useEffect(() => {
@@ -22,15 +21,14 @@ export const Home = () => {
 
   return (
     <div>
-      <h1>Trending today</h1>
-      <ul className={css.movieList}>
+      <h1 className={css.titleTrending}>Trending today</h1>
+      <ul className={css.listTrending}>
         {trending.map(movie => {
           return (
-
             <Link to={`/movies/${movie.id}`} key={movie.id}>
-              {movie.title || movie.name}
-              {/* <img src={`https://image.tmdb.org/t/p/w342${movie.backdrop_path
-                }`} alt={movie.title} /> */}
+              <img className={css.imgTrending} src={`https://image.tmdb.org/t/p/w342${movie.backdrop_path
+                }`} alt={movie.title} />
+              <p className={css.pTrending}>{movie.title || movie.name}</p>
             </Link>
           );
         })}
@@ -38,3 +36,5 @@ export const Home = () => {
     </div>
   );
 };
+
+export default Home;
