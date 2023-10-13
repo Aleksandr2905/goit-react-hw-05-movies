@@ -23,6 +23,10 @@
   color: rgb(255, 124, 1);
 }
 
+.navItem.active {
+  color: rgb(255, 124, 1);
+}
+
 /* =====================HOME================= */
 .titleTrending {
   font-size: 40px;
@@ -68,6 +72,7 @@
 .cardTrending:hover {
   transform: scale(1.03);
   color: rgb(255, 124, 1);
+  background-color: rgb(156, 187, 255);
   cursor: pointer;
 }
 
@@ -76,10 +81,105 @@
   margin-top: 10px;
   margin-bottom: 10px;
   font-size: 28px;
+  font-weight: bold;
   text-align: center;
   text-decoration: none;
 }
 
+/* =====================MOVIES================= */
+.searchForm {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.searchFormBtn {
+  display: inline-block;
+  width: 70px;
+  height: 48px;
+  font-size: 18px;
+  border: 0;
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.6;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  outline: none;
+  background-color: rgb(156, 187, 255);
+}
+
+.searchFormBtn:hover {
+  opacity: 1;
+}
+
+.searchFormInput {
+  display: inline-block;
+  width: 100%;
+  height: 48px;
+  font: inherit;
+  font-size: 26px;
+  border: none;
+  outline: none;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.listMovie {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 30px;
+}
+
+.movies {
+  text-decoration: none;
+}
+
+.cardMovies {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 400px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  object-fit: cover;
+  text-decoration: none;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: rgb(14, 0, 49);
+}
+
+.cardMovies:hover {
+  transform: scale(1.03);
+  color: rgb(255, 124, 1);
+  background-color: rgb(156, 187, 255);
+  cursor: pointer;
+}
+
+.imgMovies {
+  width: 400px;
+  border-radius: 4px;
+}
+
+.pMovies {
+  height: 60px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+}
 /* =====================MOVIE DETAILS================= */
 .movieDetailsWrap {
   display: flex;

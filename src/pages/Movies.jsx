@@ -22,6 +22,7 @@ const Movies = () => {
       try {
         const { results } = await fetchRequestSearch(queryParam);
         setSearchMovies(results);
+        console.log(results);
       } catch (error) {
         console.error(error);
       }
@@ -31,24 +32,27 @@ const Movies = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <input
+      <form className={css.searchForm} onSubmit={handleSubmit}>
+        <input className={css.searchFormInput}
           name="searchWord"
           type="text"
           placeholder="Enter search for a movie"
           defaultValue={queryParam}
         />
-        <button type="submit">Search</button>
+        <button className={css.searchFormBtn} type="submit">Search</button>
       </form>
-      <ul className={css.movieList}>
+      <ul className={css.listMovie}>
         {searchMovies.map(movie => (
-          <Link
+          <Link className={css.movies}
             key={movie.id}
             to={`/movies/${movie.id}`}
             state={{ from: location }}
             params={{ movieId: movie.id }}
           >
-            {movie.title || movie.name}
+            <div className={css.cardMovies}>
+              <img className={css.imgMovies} src={`https://image.tmdb.org/t/p/w342${movie.backdrop_path}`} alt={movie.title} />
+              <p className={css.pMovies}>{movie.title || movie.name}</p>
+            </div>
           </Link>
         ))}
       </ul>
