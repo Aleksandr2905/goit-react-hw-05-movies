@@ -25,10 +25,12 @@ const Home = () => {
       <ul className={css.listTrending}>
         {trending.map(movie => {
           return (
-            <Link to={`/movies/${movie.id}`} key={movie.id}>
-              <img className={css.imgTrending} src={`https://image.tmdb.org/t/p/w342${movie.backdrop_path
-                }`} alt={movie.title} />
-              <p className={css.pTrending}>{movie.title || movie.name}</p>
+            <Link className={css.trending} to={`/movies/${movie.id}`} key={movie.id}>
+              <div className={css.cardTrending}>
+                <img className={css.imgTrending} src={`https://image.tmdb.org/t/p/w342${movie.poster_path
+                  }`} alt={movie.title} />
+                <p className={css.pTrending}>{movie.title || movie.name}</p>
+              </div>
             </Link>
           );
         })}
