@@ -50,7 +50,7 @@ const Movies = () => {
             params={{ movieId: movie.id }}
           >
             <div className={css.cardMovies}>
-              <img className={css.imgMovies} src={`https://image.tmdb.org/t/p/w342${movie.backdrop_path}`} alt={movie.title} />
+              <img className={css.imgMovies} src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`} alt={movie.title} />
               <p className={css.pMovies}>{movie.title || movie.name}</p>
             </div>
           </Link>

@@ -1,9 +1,13 @@
 import { fetchRequestMovieDetails } from 'components/services/api';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, lazy, Suspense } from 'react';
 import { Link, Route, Routes, useLocation, useParams } from 'react-router-dom';
 import css from './Style.module.css'
-import { Cast } from 'components/Cast/Cast';
-import { Reviews } from 'components/Reviews/Reviews';
+import { Loader } from 'components/Loader/Loader';
+
+// import { Cast } from 'components/Cast/Cast';
+// import { Reviews } from 'components/Reviews/Reviews';
+const Cast = lazy(() => import('components/Cast/Cast'));
+const Reviews = lazy(() => import('components/Reviews/Reviews'));
 
 const MovieDetails = () => {
     const { movieId } = useParams();
@@ -53,10 +57,13 @@ const MovieDetails = () => {
                 <Link to='cast'>Cast</Link>
                 <Link to='reviews'>Reviews</Link>
             </div>
-            <Routes>
-                <Route path='cast' element={<Cast />} />
-                <Route path='reviews' element={<Reviews />} />
-            </Routes>
+            <Suspense fallback={<Loader />}>
+                <Routes>
+                    <Route path='cast' element={<Cast />} />
+                    <Route path='reviews' element={<Reviews />} />
+                </Routes>
+            </Suspense>
+
         </div >
     );
 };

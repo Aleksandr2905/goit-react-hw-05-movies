@@ -19,6 +19,6 @@ export const Loader = () => {
         wrapperClass=""
         colors={['#306cce', '#72a1ed']}
       />
-    </div>
+    </div >
   );
 };
