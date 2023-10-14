@@ -11,7 +11,6 @@ const Home = () => {
       try {
         const { results } = await fetchRequestTrending();
         setTrending(results);
-        console.log(results);
       } catch (error) {
         console.error(error);
       }
