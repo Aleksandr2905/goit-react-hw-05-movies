@@ -1,7 +1,7 @@
 import { NavLink, Route, Routes } from 'react-router-dom';
 import React, { lazy, Suspense } from 'react';
 import { Loader } from './Loader/Loader';
-import css from '../pages/Style.module.css';
+import css from 'pages/Style.module.css';
 const Home = lazy(() => import('pages/Home'));
 const Movies = lazy(() => import('pages/Movies'));
 const MovieDetails = lazy(() => import('pages/MovieDetails'));

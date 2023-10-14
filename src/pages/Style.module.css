@@ -25,11 +25,11 @@
   color: rgb(14, 0, 49);
 }
 
-.navItem:hover {
+.navItem.active {
   color: rgb(255, 124, 1);
 }
 
-.navItem.active {
+.navItem:hover {
   color: rgb(255, 124, 1);
 }
 
