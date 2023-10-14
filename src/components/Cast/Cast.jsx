@@ -27,7 +27,7 @@ const Cast = () => {
         <div>
             {castData ?
                 <ul className={css.cardCast}>
-                    {castData.cast.map(cast => (
+                    {castData?.cast?.map(cast => (
                         <li className={css.castItem} key={cast.id}>
                             <img className={css.castImg} src={`https://image.tmdb.org/t/p/w185${cast.profile_path}`} alt={cast.name} />
                             <p className={css.castText}>{cast.name}</p>

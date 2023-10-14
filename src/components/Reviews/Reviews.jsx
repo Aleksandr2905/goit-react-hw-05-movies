@@ -29,7 +29,7 @@ const Reviews = () => {
                 <p className={css.reviewText}>We don't have any reviews for this movie.</p>
             ) : (
                 <ul className={css.review}>
-                    {reviewsData.results.map(review => (
+                    {reviewsData?.results?.map(review => (
                         <li className={css.reviewItem} key={review.id}>
                             <h2 className={css.reviewAuthor}>Author: {review.author}</h2>
                             <p className={css.reviewText}>{review.content}</p>
