@@ -36,26 +36,26 @@ const MovieDetails = () => {
     const releaseDate = movieData?.release_date?.slice(0, 4);
 
     return (
-        <div >
+        <div className={css.movieDetailsContainer}>
             <Link className={css.movieDetailsBtn} to={backLinkRef.current}>&#129044; Go back</Link>
             {movieData ?
                 <div className={css.movieDetailsWrap}>
                     <div>
                         <img className={css.movieDetailsImg} src={`https://image.tmdb.org/t/p/w342${movieData.poster_path}`} alt={movieData.title} />
                     </div>
-                    <div>
-                        <h1>{movieData.title} ({releaseDate})</h1>
-                        <p>User score: {userScore}%</p>
-                        <h2>Overview</h2>
-                        <p>{movieData.overview}</p>
-                        <h3>Genres</h3>
-                        <p>{genres}</p>
+                    <div className={css.movieDetailsText}>
+                        <h1 className={css.movieDetailsTitle}>{movieData.title} ({releaseDate})</h1>
+                        <p className={css.movieDetailsScore}>User score: {userScore}%</p>
+                        <h2 className={css.movieDetailsOverviewTitle}>Overview</h2>
+                        <p className={css.movieDetailsOverviewText}>{movieData.overview}</p>
+                        <h3 className={css.movieDetailsGenresTitle}>Genres</h3>
+                        <p className={css.movieDetailsGenresText}>{genres}</p>
                     </div>
                 </div> : null}
-            <div>
-                <p>Additional information</p>
-                <Link to='cast'>Cast</Link>
-                <Link to='reviews'>Reviews</Link>
+            <div className={css.additionalInformation}>
+                <h4 className={css.movieDetailsAdditionalText}>Additional information</h4>
+                <Link className={css.additional} to='cast'>Cast</Link>
+                <Link className={css.additional} to='reviews'>Reviews</Link>
             </div>
             <Suspense fallback={<Loader />}>
                 <Routes>
@@ -63,7 +63,6 @@ const MovieDetails = () => {
                     <Route path='reviews' element={<Reviews />} />
                 </Routes>
             </Suspense>
-
         </div >
     );
 };

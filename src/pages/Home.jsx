@@ -21,7 +21,7 @@ const Home = () => {
 
   return (
     <div>
-      <h1 className={css.titleTrending}>Trending today</h1>
+      <h1 className={css.titleTrending}>Trending today &#127916;</h1>
       <ul className={css.listTrending}>
         {trending.map(movie => {
           return (

@@ -1,0 +1,23 @@
+.review {
+  margin-top: 20px;
+}
+
+.reviewItem {
+  border-bottom: 2px solid rgb(48, 31, 92);
+  box-shadow: 1px 1px 1px 0px rgba(14, 0, 49, 0.5);
+  margin-bottom: 30px;
+}
+
+.reviewAuthor {
+  font-size: 24px;
+  color: rgb(14, 0, 49);
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.reviewText {
+  font-size: 20px;
+  padding: 4px;
+  color: rgb(14, 0, 49);
+  margin-bottom: 10px;
+}

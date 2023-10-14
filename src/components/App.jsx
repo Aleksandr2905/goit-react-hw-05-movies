@@ -10,7 +10,7 @@ export const App = () => {
   return (
     <div>
       <header className={css.header}>
-        <nav>
+        <nav className={css.nav}>
           <NavLink className={css.navItem} to="/">
             Home
           </NavLink>
